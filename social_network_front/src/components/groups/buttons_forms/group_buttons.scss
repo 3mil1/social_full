@@ -1,0 +1,173 @@
+
+.make_group{
+    .make_group_btn{
+        background: rgba(245, 245, 245, 0.516);
+        &:hover{
+            background: #D7B271;
+        }
+    }
+    color: #333;
+    .make_group_form{
+        z-index: 99;
+        flex-direction: column;
+        background-color: rgb(204, 214, 210);
+        position: absolute;
+        bottom: calc(100vh / -4);
+        left: 0;
+        width: 500px;
+        padding: 1em;
+        margin: 30% 50%;
+        
+        .header{
+            margin: 0  0.25em;
+            width: 400px;
+        }
+        
+        #description{
+            margin-top:  0.5em;
+            padding:0.75em ;
+        }
+    }
+    .back_btn {
+        width: 5px;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+        &:hover {
+            background-color: #D7B271;
+        }
+    }
+    .error{
+        color: red;
+    }
+}
+
+
+#postForm{
+    position: absolute;
+    background-color:rgb(204, 214, 210) ;
+    border:4px solid rgba(104, 105, 104, 0.722);
+    width: 400px;
+    padding: 4em;
+    top: 0%;
+    left: 40%;
+    right: 0;
+    z-index: 10;
+    .back_btn{
+        position: absolute;
+        margin: 1em;
+        right: 0;
+        top: 0;
+    }
+
+
+    .input{
+        #subject{
+            width: 300px;
+        }
+        #content{
+            width: 280px;
+            padding: 0.5em;
+        }
+        height: 40px;
+        display: flex;
+        margin-top: 1em;
+        justify-content: space-around;
+        place-items: flex-start;
+        .error{
+            color: red;
+        }
+
+        
+    }
+
+    input[type=file]{
+        display: none;
+    }
+
+    .inputExtra{
+        margin-top: 5em;
+        margin-bottom: -2em;
+        display: flex;
+        justify-content: space-around;
+        place-items:center;
+        .image_btn {
+            border: 2px solid black;
+            padding: 0.2em;
+            cursor: pointer;
+    
+            &:hover {
+                box-shadow: 0 0 2px black;
+            }
+        }
+    }
+
+}
+
+#create_btn {
+    background: #066163;
+    color: #f3f8f8;
+
+    &:hover {
+        background: #D7B271;
+    }
+}
+
+#eventForm{
+    position: absolute;
+    background-color: rgb(204, 214, 210);
+    border: 4px solid rgba(104, 105, 104, 0.722);
+    width: 400px;
+    padding: 4em;
+    top: 0%;
+    left: 40%;
+    right: 0;
+    z-index: 10;
+    .back_btn {
+            position: absolute;
+            margin: 1em;
+            right: 0;
+            top: 0;
+        }
+
+  
+
+   .input {
+       width: 500px;
+       height: 50px;
+       display: flex;
+       margin-top: 1em;
+       justify-content: start;
+       place-items: center;
+
+       .selectionBox{
+            width: 100px;
+        }
+        input, select{
+            height: 30px;
+            width: 260px;
+        }
+       
+       label{
+        width: 120px;
+        text-align: right;
+        margin-right: 1em;
+       }
+
+       .error {
+           color: red;
+       }
+    }
+}
+
+#invite_list{
+    width: 420px;
+    .listed_user{
+        margin: 0.25em;
+        padding: 0.3em 0.2em;
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        border-bottom: 2px solid grey;
+    }
+}

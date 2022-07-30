@@ -1,0 +1,47 @@
+.navigation {
+    background-color: grey;
+    height: 100vh;
+    min-width: 160px;
+    .profile_box{
+        height: 20vh;
+        background-color: rgba(255, 255, 255, 0.547);
+        border-bottom:2px solid white;
+        display: flex;
+        flex-direction: column;
+        place-items: center;
+        justify-content: center;
+        position: relative;
+
+        .logout_link{
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 0.2em;
+            border-bottom-right-radius: 50%;
+            color: black;
+            background: rgb(83, 82, 82);
+
+            &:hover{
+                color: white;
+            }
+        }
+        div{
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    .link{
+        display: flex;
+        place-items: center;
+        justify-content:  flex-start;
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        padding: 1em;
+
+        &:hover{
+            background-color: white;
+        }
+    }
+}

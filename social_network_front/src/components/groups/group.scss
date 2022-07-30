@@ -1,0 +1,167 @@
+@import "../../index.scss";
+
+.group_list{
+    max-width: 600px;
+    .group_card{
+        display: inline-block;
+        margin: 1em;
+        min-width: 200px;
+        max-width: 300px;
+        padding:1em;
+        cursor: pointer;
+        transition: 0.3s all ease;
+        &:hover{
+            box-shadow: 0 0 10px black;
+            transform: scale(1.1);
+        }
+    }
+    .header{
+        margin-bottom: 1em;
+    }
+}
+
+.group_panel, .admin_panel{
+    min-width: 400px;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 2em;
+    min-height: 100px;
+}
+
+.invite_group_box{
+    height: 300px;
+}
+
+.group_panel{
+    min-height: 300px;
+    .header{
+        display: flex;
+        justify-content: space-between;
+        place-items: center;
+        margin-bottom: 2em;
+        height: 6em;
+        background-color: $main-hover-color;
+        padding: 1em;
+        border-radius: $box-rad;
+    }
+    .creator{
+        font-style: italic;
+        color: grey;
+    }
+    .introduction{
+        font-style: italic;
+        color: grey;
+    }
+    .content{
+        font-size: $large-font;
+    }
+
+}
+
+.groupPanel_invite_btn{
+    background-color: rgb(204, 214, 210);
+    padding:1em ;
+    margin-left: -134px;
+    .header{
+        height: 0;
+    }
+    #invite_list {
+        width: 220px;
+        height: 140px;
+        overflow: auto;
+        .listed_user {
+            margin: 0.25em;
+            padding: 0.3em 0.2em;
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            border-bottom: 2px solid grey;
+        }
+    }
+}
+
+.admin_panel{
+    background: white;
+    flex-direction: column;
+}
+
+.posts, .events {
+    position: relative;
+}
+
+.group_post{
+    background-color: white;
+    border-radius: 10px;
+    margin:2em;
+    padding: 1em;
+    cursor: pointer;
+    transition: $btn-transition;
+
+    &:hover{
+        background-color: $main-hover-color;
+        transition: $btn-transition;
+        transform: scale(1.05) translateY(-10px);
+        box-shadow: 0 10px 5px #26222c;
+    }
+    
+    .header{
+        justify-content: space-between;
+        place-items: flex-end;
+        border-bottom: 2px solid $main-hover-color !important;
+        padding-bottom: 1em;
+        .subject{
+            font-weight: 600;
+            font-size: 20px;
+            margin-right: 0.5em;
+            &:hover{
+                color: rgb(255, 162, 0);
+                font-weight: 700;
+            }
+        }
+        .author{
+            flex:1;
+            color: grey;
+            font-size: 12px;
+
+            &:hover{
+                color: rgb(255, 162, 0);
+                font-size: 14px;
+                font-weight: 700;
+                transition: 0.2s all ease;
+            }
+        }
+        
+        .time{
+            color: grey;
+            font-style: italic;
+        }
+
+        .event_btns{
+            flex: 2;
+        }
+
+        .date{
+            flex: 1;
+        }
+
+        .green{
+            background-color: rgba(0, 128, 0, 0.582);
+        }
+    }
+    .content{
+        padding:1em;
+        justify-content: flex-start;
+        place-items: flex-start;
+        .image{
+            width: 80px;
+        }
+    }
+}
+
+.past{
+    background-color: rgb(205, 205, 205);
+    opacity: 0.75;
+    pointer-events: none;
+   
+}

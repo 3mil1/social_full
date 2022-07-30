@@ -1,0 +1,46 @@
+@import "../../index";
+
+body {
+    background-color: $background-color;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    flex-direction: column;
+}
+
+
+.Register{
+    background-color: $box-background-color;
+    //width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    flex-direction: column;
+    color: $main-text-color;
+    position: relative;
+
+    .back_btn{
+        padding: 0.5em 1em;
+        position: absolute;
+        top: 1em;
+        left: 1em;
+        color: $main-text-color;
+        background-color: $box-inner2-color;
+        font-size: $medium-font;
+        border-radius: $box-rad;
+        &:hover{
+            background-color: #D7B271;
+        }
+    }
+    form{
+        display: flex;
+        flex-direction: column;
+    }
+  
+    .errors{
+        color: red;
+    }
+}

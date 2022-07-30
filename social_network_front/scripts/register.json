@@ -1,0 +1,29 @@
+[
+{
+    "email": "silver@gmail.com",
+    "first_name": "Silver",
+    "last_name": "Luhtoja",
+    "birth_day": "0091-03-30",
+    "nickname": "Sinsius",
+    "about_me": "Scripted",
+    "user_img": ""
+},
+{
+    "email": "vici@gmail.com",
+    "first_name": "vici",
+    "last_name": "vici",
+    "birth_day": "0091-03-30",
+    "nickname": "vici",
+    "about_me": "Scripted",
+    "user_img": ""
+},
+{
+    "email": "maik@gmail.com",
+    "first_name": "maik",
+    "last_name": "maik",
+    "birth_day": "0091-03-30",
+    "nickname": "maik",
+    "about_me": "Scripted",
+    "user_img": ""
+}
+]

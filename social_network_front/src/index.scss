@@ -1,0 +1,66 @@
+// COLORS
+$background-color:#37333E;
+$box-background-color: #CCD6D2;
+$box-inner-color:#709295;
+$box-inner2-color: rgba(255, 255, 255, 0.7);
+$btn-color:#D7B271;
+$main-text-color:#415458;
+$second-text-color:#585858;
+$main-hover-color: rgb(204, 214, 210);
+
+//  FONT
+$large-font:20px;
+$medium-font:16px;
+$small-font:12px;
+$mini-font:8px;
+
+//  Transition 
+$btn-transition: 0.5s all ease;
+
+// BOX
+$box-rad:10px;
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  main.screen-center {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+  }
+  > div {
+    display: flex;
+  }
+  .left {
+    flex: 0 0 auto;
+    width: 30vw;
+  }
+  .right {
+    flex: 1;
+    padding: 20px;
+  }
+}

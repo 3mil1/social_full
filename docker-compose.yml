@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./social-network
+    container_name: be_social
+    command: go run ./cmd/social-network/
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+  frontend:
+    build: ./social_network_front
+    container_name: fe_social
+    command: npm run start
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./social_network_front/src:/app/src
+
+
+

@@ -1,0 +1,40 @@
+@import "../../index.scss";
+
+.searched_objects{
+    height: 300px;
+    overflow: auto;
+    transition: 1s all ease;
+    background-color: $main-hover-color !important;
+    .user{
+        transition: 0.3s all ease;
+        border-bottom: 2px solid white;
+        &:hover{
+            background-color: white;
+            cursor: pointer;
+        }
+        
+        .mini{
+            font-size: 10px;
+            color: #333;
+        }
+    }
+}
+
+
+.search_wrapper{
+    background-color: $main-hover-color !important;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+.filter{
+    background-color:$main-hover-color ;
+    .btn{
+        background-color: $btn-color;
+        pointer-events: none;
+    }
+}
+
+.hide{
+    height: 0;
+    opacity: 0;
+}

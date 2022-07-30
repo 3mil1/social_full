@@ -1,0 +1,1 @@
+export default function filterDoubles (arr) {return [...new Map(arr.map(obj => [JSON.stringify(obj), obj])).values()]};
