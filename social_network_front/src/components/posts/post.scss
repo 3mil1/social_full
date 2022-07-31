@@ -1,5 +1,8 @@
 @import "../../index";
 
+.post_wrapper{
+    position: relative;
+}
 .post{
     background-color:  $box-background-color;
     min-width: 360px;
@@ -32,6 +35,7 @@
                 color: $second-text-color;
             }
         }
+
         .date{
             font-size: $small-font;
             color: $second-text-color;
@@ -48,30 +52,34 @@
             max-width: 100%;
         }
     }
-    
 }
 
 .post_list{
     display: flex;
     flex-direction: column;
-    // place-items: center;
-    overflow: auto;
     height: 100vh;
     width: 90%;
 }
 
 .fabBtn {
     width: 10%;
+    position: absolute;
+    transform: scale(1.2);
+    top: -5%;
+    right: 5%;
 }
+
 a {
     text-decoration: none;
     font-size: 30px;
     color: #37333E;
 }
+
 .title {
     color: #37333E;
     font-size: 30px;
 }
+
 .user-name {
     color: #585858;
 }

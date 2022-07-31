@@ -15,6 +15,7 @@
             transform: scale(1.1);
         }
     }
+
     .header{
         margin-bottom: 1em;
     }
@@ -35,6 +36,7 @@
 
 .group_panel{
     min-height: 300px;
+
     .header{
         display: flex;
         justify-content: space-between;
@@ -45,14 +47,17 @@
         padding: 1em;
         border-radius: $box-rad;
     }
+
     .creator{
         font-style: italic;
         color: grey;
     }
+
     .introduction{
         font-style: italic;
         color: grey;
     }
+
     .content{
         font-size: $large-font;
     }
@@ -63,13 +68,16 @@
     background-color: rgb(204, 214, 210);
     padding:1em ;
     margin-left: -134px;
+
     .header{
         height: 0;
     }
+
     #invite_list {
         width: 220px;
         height: 140px;
         overflow: auto;
+
         .listed_user {
             margin: 0.25em;
             padding: 0.3em 0.2em;
@@ -110,6 +118,7 @@
         place-items: flex-end;
         border-bottom: 2px solid $main-hover-color !important;
         padding-bottom: 1em;
+
         .subject{
             font-weight: 600;
             font-size: 20px;
@@ -119,6 +128,7 @@
                 font-weight: 700;
             }
         }
+
         .author{
             flex:1;
             color: grey;
@@ -149,6 +159,7 @@
             background-color: rgba(0, 128, 0, 0.582);
         }
     }
+    
     .content{
         padding:1em;
         justify-content: flex-start;

@@ -8,10 +8,7 @@ import {
   setFollowerList,
 } from "../../store/chatSlice";
 import GroupService from "../../utilities/group_service";
-
-// import Picker from "emoji-picker-react";
 import InputEmoji from "react-input-emoji";
-
 //mui material
 import { Button, Divider, Grid, ListItem } from "@mui/material";
 import Paper from "@mui/material/Paper";
@@ -26,14 +23,11 @@ import WsApi from "../../utilities/ws";
 import { removeNotification } from "../../store/notificationSlice";
 
 export const Chat = () => {
-  // let followerList = useSelector((state) => state.followers.followers);
-  // const [followerList, setFollowerList] = useState({});
   const followerList = useSelector((state) => state.chat.followers);
   let notifications = useSelector((state) => state.notifications.messages);
-  // console.log("Notifications from useSelector", notifications);
+
   let dispatch = useDispatch();
   const [receiver, setReceiver] = useState({ id: "", type: "" });
-  // console.log("Receiver", receiver);
 
   const msgs = useSelector((state) => state.chat.msgHistory);
   let sender = helper.getTokenId();
@@ -60,10 +54,7 @@ export const Chat = () => {
   const joinedGroups = useSelector((state) => state.groups.joinedGroups);
   let groups = createdGroups.concat(joinedGroups);
 
-  // console.log("Groups:", groups);
-  // console.log("Followers:", followerList);
-
-  //lead to one obj type
+  //convert to one obj type
   let members = [];
   followerList?.forEach((f) => {
     let chatMember = {
@@ -82,7 +73,6 @@ export const Chat = () => {
     };
     members.push(group);
   });
-  // console.log("Members", members);
 
   // 👇️ scroll to bottom every time messages change
   const bottomRef = useRef(null);
@@ -124,7 +114,6 @@ export const Chat = () => {
           shouldDelete
         );
       } catch (e) {
-        console.log(e.message);
         const errorState = {
           text: "Can't load messages",
           severity: "warning",
@@ -132,7 +121,6 @@ export const Chat = () => {
         dispatch(setAlert(errorState));
       }
     } else if (receiver.type === "group") {
-      // console.log("receiver", receiver);
       try {
         msgHistory = await chatService.getGroupMsgs(
           receiver.id,
@@ -140,7 +128,6 @@ export const Chat = () => {
           10,
           shouldDelete
         );
-        console.log("group messages", msgHistory);
       } catch (e) {
         console.error(e.message);
         const errorState = {
@@ -150,7 +137,6 @@ export const Chat = () => {
         dispatch(setAlert(errorState));
       }
     }
-    console.log("response", msgHistory);
     setHasMore(msgHistory !== null && msgHistory.length === 10);
     if (s === 0) {
       dispatch(loadMsgs(msgHistory));
@@ -158,6 +144,7 @@ export const Chat = () => {
       dispatch(addToBegining(msgHistory));
     }
   };
+
   useEffect(() => {
     if (receiver.id !== "") {
       loadHistory(0);
@@ -168,7 +155,6 @@ export const Chat = () => {
   //send chat message
   const [text, setText] = useState("");
   const sendMsg = (text) => {
-    // console.log(text);
     if (text.trim().length > 0) {
       let jsonData = {};
       if (receiver.type === "person") {
@@ -179,7 +165,6 @@ export const Chat = () => {
       jsonData["user"] = sender;
       jsonData["message_to"] = receiver.id;
       jsonData["message_content"] = text;
-      // console.log("JSON DATA", JSON.stringify(jsonData));
       WsApi.sendChatMessage(JSON.stringify(jsonData));
       setText("");
       bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -194,9 +179,6 @@ export const Chat = () => {
     };
     dispatch(setAlert(errorState));
   };
-
-  // let msgHeight = document.getElementsByClassName("messageArea");
-  // console.log("height: ", msgHeight[0].scrollHeight);
 
   return (
     <div className={"fullWidth"}>
@@ -213,7 +195,6 @@ export const Chat = () => {
               members.map((member, i) => {
                 return (
                   <ListItem key={i.toString()}>
-                    {/*<FaceIcon />*/}
                     {member.type === "person" ? <FaceIcon /> : <GroupsIcon />}
                     <ListItemText>
                       <Button
@@ -290,31 +271,20 @@ export const Chat = () => {
             <div ref={bottomRef} />
           </List>
           <Divider />
-          {/*<form ref={form} onSubmit={handleSubmit(sendMsg)}>*/}
           <Grid container style={{ padding: "20px" }}>
             <Grid item xs={10}>
               <InputEmoji
                 id="msg-input"
                 label="Type a message"
-                // multiline
                 maxRows={2}
                 height={600}
-                // fullWidth
-                // cleanOnEnter
                 maxLength={400}
                 value={text}
                 onChange={setText}
                 onEnter={receiver.id !== "" ? sendMsg : fireAlert}
               />
             </Grid>
-            {/*<Grid item xs={1} marginLeft={1} align="right">*/}
-            {/*  /!*<Picker onEmojiClick={onEmojiClick} />*!/*/}
-            {/*  <Fab color="primary" aria-label="add" type={"submit"}>*/}
-            {/*    <SendIcon />*/}
-            {/*  </Fab>*/}
-            {/*</Grid>*/}
           </Grid>
-          {/*</form>*/}
         </Grid>
       </Grid>
     </div>

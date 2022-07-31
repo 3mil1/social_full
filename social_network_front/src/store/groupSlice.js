@@ -1,10 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const groupSlice = createSlice({
-  name: 'groups',
+  name: "groups",
   initialState: {
     updateStatus: false,
-    // currentUserId: null,
     currentGroupInfo: {},
     createdGroups: [],
     sentRequests: [],
@@ -22,7 +21,6 @@ export const groupSlice = createSlice({
     updateSentRequests: (state, action) => {
       let arr = state.sentRequests;
       if (!arr.includes(action.payload)) arr.push(action.payload);
-      // state.sentRequests = action.payload;
       state.sentRequests = arr;
     },
     updateJoinedGroups: (state, action) => {
@@ -35,7 +33,7 @@ export const groupSlice = createSlice({
       state.updateStatus = action.payload;
     },
     addAllGroups: (state, action) => {
-      state.allGroups = action.payload
+      state.allGroups = action.payload;
     },
   },
 });

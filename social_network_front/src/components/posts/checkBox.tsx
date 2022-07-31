@@ -24,7 +24,6 @@ export function UserList(props: Inpt) {
     } else {
       newChecked.splice(currentIndex, 1);
     }
-    // console.log("Checked", newChecked);
     setChecked(newChecked);
   };
 

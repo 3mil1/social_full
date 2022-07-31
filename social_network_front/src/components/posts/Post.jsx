@@ -3,7 +3,6 @@ import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import { openModal } from "../../store/postSlice";
 import { useDispatch } from "react-redux";
-// import * as React from "@types/react";
 
 export const Post = ({ post, toShow }) => {
   const dispatch = useDispatch();
@@ -15,7 +14,6 @@ export const Post = ({ post, toShow }) => {
   return (
     <div className="post">
       <div className="post_header">
-        {/*<img src={require("../../assets/Images/ano.jpg")} alt="ano_pic" />*/}
         {post.title !== "" ? (
           <>
             <div className="information">

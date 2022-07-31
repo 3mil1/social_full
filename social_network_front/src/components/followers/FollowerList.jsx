@@ -1,7 +1,6 @@
 import "./follower.scss"
 import FollowerCard from "./FollowerCard"
 
-
 const FollowerList = ({list, label}) => {
 
     return (

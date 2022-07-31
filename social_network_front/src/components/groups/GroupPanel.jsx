@@ -7,6 +7,7 @@ import Join_group_btn from "./buttons_forms/Join_group_btn";
 import Requests from "./RequestList";
 import Invite_group_btn from "./buttons_forms/Invite_group_btn";
 import "./group.scss";
+
 const GroupPanel = ({isAdmin,isMember}) => {
     const group_service = GroupService()
     const [info,setInfo ] = useState({})
@@ -15,14 +16,13 @@ const GroupPanel = ({isAdmin,isMember}) => {
 
     useEffect(()=>{
         group_service.getGroupInfo(id).then(res => {
-        setInfo(res)
-        if(isAdmin){
-            setCount(res.Members.length)
-        }else{
-            setCount(res.members)
-        }
-    })
-
+            setInfo(res)
+            if(isAdmin){
+                setCount(res.Members.length)
+            }else{
+                setCount(res.members)
+            }
+        })
     },[id])
 
     return (

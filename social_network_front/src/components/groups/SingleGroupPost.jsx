@@ -4,6 +4,7 @@ export const SingleGroupPost = ({data}) => {
   let redirect = useNavigate();
   let onGroupPage = window.location.href.split("/").indexOf("post") < 0;
   let {id} = useParams();
+  
   return (
     <>
     {onGroupPage &&

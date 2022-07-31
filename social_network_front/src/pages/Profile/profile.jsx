@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import FollowerList from "../../components/Lists/FollowerList";
+import FollowerList from "../../components/followers/FollowerList";
 import ProfileInfo from "../../components/ProfileInfo";
 import Make_group from "../../components/groups/buttons_forms/Make_group_btn";
 import GroupList from "../../components/groups/GroupList";
@@ -48,7 +48,6 @@ const Profile = () => {
   const group_service = GroupService();
   const storeInfo = useSelector((state) => state);
   let redirect = useNavigate();
-  // switching store status to update page
   let updateFollowers = useSelector((state) => state.followers.updateStatus);
   let [myInfo, setMyInfo] = useState(false);
   let [followers, setFollowers] = useState(null);

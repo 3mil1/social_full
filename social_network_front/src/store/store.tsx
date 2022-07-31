@@ -20,12 +20,11 @@ const rootReducer = combineReducers({
 
 // @ts-ignore
 export const appReducer = (state, action) => {
-  // console.log(action);
-  if (action.type === 'LOGOUT'){
-    return rootReducer(undefined,action)
+  if (action.type === "LOGOUT") {
+    return rootReducer(undefined, action);
   }
-  return rootReducer(state,action)
-}
+  return rootReducer(state, action);
+};
 
 const store = configureStore({
   reducer: appReducer,

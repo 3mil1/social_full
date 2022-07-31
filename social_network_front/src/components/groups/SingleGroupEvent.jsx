@@ -4,13 +4,11 @@ import GroupService from "../../utilities/group_service";
 import * as helper from "../../helpers/HelperFuncs"
 import { useNavigate } from "react-router-dom";
 
-
 const SingleGroupEvent = ({data}) => {
   const group_service  = GroupService()
   let joined = group_service.isJoining(data.event_id)
   let [past, setPast] = useState(false)
   let redirect = useNavigate();
-
 
   useEffect(()=>{
       if(!helper.timeManager.isFuture(helper.timeManager.todayDate(),data.day)){
@@ -38,7 +36,6 @@ const SingleGroupEvent = ({data}) => {
               redirect(`/profile/${data.user_id}`);
             }}
           >
-            {' '}
             ({data.creator_firstname} {data.creator_lastname})
           </div>
           <div className='event_btns'>
@@ -50,8 +47,7 @@ const SingleGroupEvent = ({data}) => {
                     if (!joined) handleRequest(1);
                   }}
                 >
-                  {' '}
-                  Going{' '}
+                  Going
                 </Button>
                 <Button
                   className={!joined ? 'green' : ''}
@@ -59,7 +55,6 @@ const SingleGroupEvent = ({data}) => {
                     if (joined) handleRequest(2);
                   }}
                 >
-                  {' '}
                   Not Going
                 </Button>
               </>

@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
 import { Home } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
-import "./styles/navbar.scss";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
-import Logout from "./buttons/logout";
+import Logout from "../components/buttons/logout";
 import Searchbar from "./Searchbar";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import ChatIcon from "@mui/icons-material/Chat";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import NotificationService from "../utilities/notification_service";
 import { useEffect, useState } from "react";
+import * as helper from "../helpers/HelperFuncs"
+import "./styles/navbar.scss";
 
 const Navbar = () => {
   const storeInfo = useSelector((state: RootState) => state);
@@ -35,7 +36,7 @@ const Navbar = () => {
         }
       });
     } catch (err) {
-      console.log("SOME ERROR :", err);
+      helper.checkError(err);
     }
     setNotificationCount(0);
   };
@@ -64,7 +65,6 @@ const Navbar = () => {
         <p>
           {storeProfileInfo.first_name} {storeProfileInfo.last_name}
         </p>
-        <button onClick={() => console.log(storeInfo)}>show storeInfo</button>
       </div>
 
       <Link className="link" to={"/homepage"}>

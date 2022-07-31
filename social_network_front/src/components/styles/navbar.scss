@@ -1,7 +1,11 @@
+@import "../../index.scss";
+
 .navigation {
-    background-color: grey;
+    background-color: $main-hover-color;
     height: 100vh;
     min-width: 160px;
+    position: fixed;
+
     .profile_box{
         height: 20vh;
         background-color: rgba(255, 255, 255, 0.547);
@@ -18,13 +22,14 @@
             left: 0;
             padding: 0.2em;
             border-bottom-right-radius: 50%;
-            color: black;
-            background: rgb(83, 82, 82);
-
+            color:$main-text-color;
+            background: $btn-color;
+            
             &:hover{
                 color: white;
             }
         }
+        
         div{
             width: 100px;
             height: 100px;

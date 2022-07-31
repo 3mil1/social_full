@@ -23,10 +23,6 @@
         background-color: white;
         box-shadow:  0 0 10px black;
         transform: scale(1.02);
-        // .eye{
-            //     transition: 0.5s all ease;
-            //     transform: scale(1);
-            // }
         }
         
         strong{
@@ -59,6 +55,7 @@
     .flex{
         justify-content: space-between;
         min-width:600px ;
+        
         .buttons{
             margin-left: 2em;
             Button{

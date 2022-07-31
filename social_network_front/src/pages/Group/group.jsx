@@ -5,8 +5,8 @@ import GroupPanel from "../../components/groups/GroupPanel";
 import GroupPosts from "../../components/groups/GroupPosts";
 import GroupEvents from "../../components/groups/GroupEvents";
 import GroupService from "../../utilities/group_service";
-import "./group.scss"
 import { useEffect } from "react";
+import "./group.scss"
 
 const Group = () => {
   const group_service = GroupService();
