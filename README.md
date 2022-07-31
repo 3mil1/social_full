@@ -6,10 +6,10 @@ Authors:<br>
  - Silver Luhtoja (SilverL)<br>
  - Anna Lazarenkova (anna_lazarenkova)
 
-    How to run: 
-    1. in terminal type: bash  start.sh
-    2. wait til docker has finished installing and setting up
-    3. open broswer on "http://localhost:3000/:
+How to run: 
+1. in terminal type: bash  start.sh
+2. wait til docker has finished installing and setting up
+3. open broswer on "http://localhost:3000/:
 
 
 ### Authentication
