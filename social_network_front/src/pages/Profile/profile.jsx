@@ -72,7 +72,6 @@ const Profile = () => {
     } else {
       profile_service.getUserInfo(id).then(res => {
         setUserPrivate(res.is_private)
-        if(id != "me"){
           if(!res.is_private) {
             setAccess(true)
           }else{
@@ -80,10 +79,7 @@ const Profile = () => {
               setAccess(true)
             }else{
               setAccess(false)
-            }
           }
-        // }else{
-        //   setAccess(true)
         }
       })
     }
