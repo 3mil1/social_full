@@ -23,7 +23,6 @@ const ProfileService = () => {
       const response = await http.get("/user/me");
       dispatch(update({ ...response.data, id: helper.getTokenId() }));
     } catch (err) {
-      console.log("Error!", err);
       helper.checkError(err);
     }
   };
@@ -45,13 +44,14 @@ const ProfileService = () => {
 
   const getAllUsers = async () => {
     try {
-      console.log("%cFetching All users list", "color:orange");
+      // console.log("%cFetching All users list", "color:orange");
       const response = await http.get("user/all");
       dispatch(addAllUsers(response.data));
     } catch (err) {
       helper.checkError(err);
     }
   };
+
 
   // I need to send id(My info should be empty id) to get one user info = http://localhost:8080/user/oneuser?id=380c54e8-7560-4055-aea4-f6d7b2282d4d
   const getUserInfo = async (id) => {

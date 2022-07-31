@@ -29,11 +29,11 @@ const SingleGroupEvent = ({data}) => {
     <div>
       <div className={`group_post ${past ? 'past' : ''}`}>
         <div className='header flex'>
-          <div className='subject'>{data.title} </div>
+          <div className='subject eventsOff'>{data.title} </div>
           <div
             className='author'
             onClick={() => {
-              redirect(`/profile/${data.user_id}`);
+              redirect(`/profile/${data.creator_id}`);
             }}
           >
             ({data.creator_firstname} {data.creator_lastname})

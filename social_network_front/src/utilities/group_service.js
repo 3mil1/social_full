@@ -120,7 +120,7 @@ const GroupService = () => {
 
   const getGroupPosts = async (id) => {
     try {
-      console.log("%c Fetching specific group posts --> ", "color:orange");
+      // console.log("%c Fetching specific group posts --> ", "color:orange");
       const response = await http.get(`/group/post/all?groupId=${id}`);
       return response.data;
     } catch (err) {
@@ -143,7 +143,7 @@ const GroupService = () => {
 
   const getGroupEvents = async (id) => {
     try {
-      console.log("%c Fetching specific group events --> ", "color:orange");
+      // console.log("%c Fetching specific group events --> ", "color:orange");
       const response = await http.get(`/group/event/all?groupId=${id}`);
       return response.data;
     } catch (err) {
@@ -153,10 +153,10 @@ const GroupService = () => {
 
   const getAvailableFriends = async (id) => {
     try {
-      console.log(
-        "%c Fetching available friends to send invites--> ",
-        "color:orange"
-      );
+      // console.log(
+      //   "%c Fetching available friends to send invites--> ",
+      //   "color:orange"
+      // );
       const response = await http.get(`/group/invite/available?groupId=${id}`);
       return response.data;
     } catch (err) {

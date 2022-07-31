@@ -9,11 +9,13 @@ const GroupPosts = ({ id }) => {
 
   const update = useSelector((state) => state.groups.updateStatus);
   useEffect(() => {
-    group_service.getGroupPosts(id).then((res) => {
-      if (res !== null) {
-        setPosts(res);
-      }
-    });
+    setTimeout(()=>{
+      group_service.getGroupPosts(id).then((res) => {
+        if (res !== null) {
+          setPosts(res);
+        }
+      })
+    },100);
   }, [id, update]);
 
   return (
