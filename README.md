@@ -9,7 +9,7 @@ Authors:<br>
 How to run: 
 1. open folder "social-network" and add new file ".env" with: <br>
 REFRESH_SECRET={SomeSecretWordHere}<br>
-ACCESS_SECRET={OneMoreSecretWordHere}<br>
+ACCESS_SECRET={AnotherSecretWordHere}<br>
 
 2. in terminal type: bash  start.sh
 3. wait til docker has finished installing and setting up (it will take up to 5 minutes)
