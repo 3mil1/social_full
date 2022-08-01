@@ -7,9 +7,13 @@ Authors:<br>
  - Anna Lazarenkova (anna_lazarenkova)
 
 How to run: 
-1. in terminal type: bash  start.sh
-2. wait til docker has finished installing and setting up
-3. open broswer on "http://localhost:3000/:
+1. open folder "social-network" and add new file ".env" with: <br>
+REFRESH_SECRET={SomeSecretWordHere}
+ACCESS_SECRET={OneMoreSecretWordHere}<br>
+
+2. in terminal type: bash  start.sh
+3. wait til docker has finished installing and setting up (it will take up to 5 minutes)
+4. open browser on "http://localhost:3000/:
 
 ### Objectives
 This project is a Facebook-like social network that will contain the following features:
