@@ -8,7 +8,7 @@ Authors:<br>
 
 How to run: 
 1. open folder "social-network" and add new file ".env" with: <br>
-REFRESH_SECRET={SomeSecretWordHere}
+REFRESH_SECRET={SomeSecretWordHere}<br>
 ACCESS_SECRET={OneMoreSecretWordHere}<br>
 
 2. in terminal type: bash  start.sh
