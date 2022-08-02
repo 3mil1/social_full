@@ -20,6 +20,6 @@
 .DS_Store
 ./tmp
 dataBase.db
-.env
+# .env
 
 # git add -- . ':!.env :!dataBase.db :!./tmp*'

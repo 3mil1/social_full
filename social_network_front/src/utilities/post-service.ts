@@ -5,7 +5,7 @@ import { parseDate } from "../helpers/parseDate";
 
 export default {
   async addNewPost(post: NewPostForm): Promise<PostInterface> {
-    console.log("Get post: ", post);
+    // console.log("Get post: ", post);
     try {
       const response = await http.post("post/new", {
         subject: post.title,
@@ -15,7 +15,7 @@ export default {
         parent_id: post.parent_id,
         access: post.userList,
       });
-      console.log("response after add new post: ", response);
+      // console.log("response after add new post: ", response);
       return {
         id: response.data.id,
         user_id: response.data.user_id,
@@ -24,7 +24,7 @@ export default {
         title: response.data.subject,
         content: response.data.content,
         image: response.data.image,
-        created_at: parseDate(response.data.created_at),
+        created_at: parseDate(response.data.created_at, true),
         privacy: response.data.privacy,
       };
     } catch (e) {
@@ -43,7 +43,7 @@ export default {
     }
   },
 
-   async getOverviewPosts() {
+  async getOverviewPosts() {
     try {
       const response = await http.get("post/all");
       return response.data;
@@ -73,5 +73,5 @@ export default {
       console.error(e);
       throw e;
     }
-  }
+  },
 };

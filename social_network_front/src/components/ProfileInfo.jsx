@@ -3,14 +3,12 @@ import { useParams } from "react-router-dom";
 import ProfileService from "../utilities/profile_service";
 import Follow_btn from "./buttons/follower_btn";
 import * as helper from "../helpers/HelperFuncs";
-
 //  MUI Material
 import { Avatar, Button, Input, Typography } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
 import EditIcon from "@mui/icons-material/Edit";
 import RemoveIcon from "@mui/icons-material/Remove";
-
-// REdux
+// Redux
 import { useSelector } from "react-redux";
 import "./styles/profile_info.scss";
 
@@ -41,15 +39,20 @@ const ProfileInfo = () => {
     }
   };
 
+  const followingAlready = () => {
+    return storeInfo.followers.followers.filter(user => user.user_id === id).length != 0;
+  }
+
   const handleUpdate = async (info) => {
     if (errors.length == 0) {
       info.user_img = img;
-      profile_service.updateProfileInfo(info);
+      await profile_service.updateProfileInfo(info);
+      setUpdateing(!updateing);
     }
   };
 
   const updateData = () => {
-    setIsPrivate(storeInfo.profile.info.is_private)
+    setIsPrivate(storeInfo.profile.info.is_private);
     if (id == "me") {
       setMyProfile(true);
       setDatas(storeInfo.profile.info);
@@ -65,6 +68,7 @@ const ProfileInfo = () => {
   };
 
   useEffect(() => {
+    followingAlready()
     updateData();
     if (!updateing && myProfile) {
       setImg(data.user_img);
@@ -83,7 +87,12 @@ const ProfileInfo = () => {
       )}
       <div className="left_side">
         {myProfile && (
-          <div className="setting_btn" onClick={() => {setUpdateing(!updateing) }}>
+          <div
+            className="setting_btn"
+            onClick={() => {
+              setUpdateing(!updateing);
+            }}
+          >
             <SettingsIcon className="gear" />
           </div>
         )}
@@ -164,9 +173,11 @@ const ProfileInfo = () => {
               alt={data.first_name}
               src={data.user_img}
             />
-            <Typography sx={{margin:"1em", fontSize:"20px"}}>{data.nickname}</Typography>
+            <Typography sx={{ margin: "1em", fontSize: "20px" }}>
+              {data.nickname}
+            </Typography>
 
-            {!myProfile && <Follow_btn  isPrivate={isPrivate} />}
+            {!myProfile && <Follow_btn isPrivate={isPrivate} />}
           </>
         )}
       </div>
@@ -175,7 +186,7 @@ const ProfileInfo = () => {
         <p> First Name : {data.first_name}</p>
         <p> Last Name : {data.last_name}</p>
 
-        {!myProfile && !isPrivate && (
+        {!myProfile && (!isPrivate || followingAlready()) && (
           <>
             <p> Email : {data.email}</p>
             <p> Birthday : {data.birth_day}</p>

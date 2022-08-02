@@ -1,6 +1,7 @@
 import { Avatar, Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./follower.scss";
+
 const FollowerCard = ({ data }) => {
   let redirect = useNavigate();
   return (

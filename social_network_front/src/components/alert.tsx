@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Snackbar from "@mui/material/Snackbar";
-// import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { setAlert } from "../store/alertSlice";
-import { Alert, AlertColor } from "@mui/material";
+import { Alert } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store/store";
 
@@ -30,11 +29,10 @@ export function AlertSnackbar() {
     return <></>;
   }
 
-  // useEffect(() => {});
   return (
     <Snackbar
-      anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-      style={{ bottom: "75px" }}
+      anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      style={{ top: "25%" }}
       open={isOpen}
       autoHideDuration={6000}
       onClose={handleClose}

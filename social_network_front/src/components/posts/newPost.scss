@@ -4,7 +4,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 600px;
-background-color: #CCD6D2;
+  background-color: #CCD6D2;
   border: 2px solid #000;
 
   .title {
@@ -14,14 +14,13 @@ background-color: #CCD6D2;
     padding: 1em;
     max-width: 500px;
   }
+
   .close{
     position: fixed;
     top:5px;
     right: 3px;
   }
-  //TextField, Input {
-  //
-  //}
+  
   .content {
     padding: 1em;
   }

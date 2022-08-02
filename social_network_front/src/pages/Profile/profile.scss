@@ -1,4 +1,6 @@
 .groups_container{
+    color: #CCD6D2;
+
     .header{
         display: flex;
         justify-content: space-between;
@@ -6,9 +8,12 @@
         height: 40px;
         border-bottom: 2px solid #CCD6D2;
     }
-    color: #CCD6D2;
 }
 
 .tabMenu {
+    // position: fixed;
+    // align-content: center;
+    // width: 100%;
+    // margin-bottom: 20px;
     background-color: #CCD6D2;
 }

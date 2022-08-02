@@ -2,12 +2,12 @@ import { styled } from "@mui/material/styles";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { Avatar, Button, Container } from "@mui/material";
-import "./styles/searchbar.scss";
 import ProfileService from "../utilities/profile_service";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import GroupService from "../utilities/group_service";
+import "./styles/searchbar.scss";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -64,6 +64,7 @@ const Searchbar = () => {
   const mapArray = arr => {
     return arr.map((btn, index) => (
       <Button
+        key={index}
         className={option == index ? 'btn' : ''}
         onClick={() => {
           setOption(index);
@@ -99,11 +100,9 @@ const Searchbar = () => {
   
   return (
     <div>
-      <div className='filter'>
-          {mapArray(options)}
-      </div>
+      <div className='filter'>{mapArray(options)}</div>
 
-      <Search className="search_wrapper">
+      <Search className='search_wrapper'>
         <SearchIconWrapper>
           <SearchIcon />
         </SearchIconWrapper>
@@ -119,10 +118,10 @@ const Searchbar = () => {
 
       <Container className='searched_objects hide'>
         {users &&
-          users.map(user => (
+          users.map((user, index) => (
             <div
               className='user flex'
-              key={user.ID}
+              key={index}
               id={user.ID}
               onClick={() => {
                 setInput('');
@@ -142,10 +141,10 @@ const Searchbar = () => {
             </div>
           ))}
         {groups &&
-          groups.map(group => (
+          groups.map((group, index) => (
             <div
               className='user flex'
-              key={group.id}
+              key={index}
               id={group.id}
               onClick={() => {
                 setInput('');

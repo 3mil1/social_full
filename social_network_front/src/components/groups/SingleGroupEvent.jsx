@@ -3,14 +3,14 @@ import { useEffect, useState } from "react";
 import GroupService from "../../utilities/group_service";
 import * as helper from "../../helpers/HelperFuncs"
 import { useNavigate } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 
 const SingleGroupEvent = ({data}) => {
   const group_service  = GroupService()
+  const name = useSelector(state => state.profile.info.first_name + " " + state.profile.info.last_name);
+  const redirect = useNavigate();
+  const [past, setPast] = useState(false)
   let joined = group_service.isJoining(data.event_id)
-  let [past, setPast] = useState(false)
-  let redirect = useNavigate();
-
 
   useEffect(()=>{
       if(!helper.timeManager.isFuture(helper.timeManager.todayDate(),data.day)){
@@ -31,14 +31,15 @@ const SingleGroupEvent = ({data}) => {
     <div>
       <div className={`group_post ${past ? 'past' : ''}`}>
         <div className='header flex'>
-          <div className='subject'>{data.title} </div>
+          <div className='subject eventsOff'>{data.title} </div>
           <div
             className='author'
-            onClick={() => {
-              redirect(`/profile/${data.user_id}`);
+            onClick={e => {
+              if (e.target.textContent.slice(1,-1) != name) {
+                redirect(`/profile/${data.creator_id}`);
+              }
             }}
           >
-            {' '}
             ({data.creator_firstname} {data.creator_lastname})
           </div>
           <div className='event_btns'>
@@ -50,8 +51,7 @@ const SingleGroupEvent = ({data}) => {
                     if (!joined) handleRequest(1);
                   }}
                 >
-                  {' '}
-                  Going{' '}
+                  Going
                 </Button>
                 <Button
                   className={!joined ? 'green' : ''}
@@ -59,7 +59,6 @@ const SingleGroupEvent = ({data}) => {
                     if (joined) handleRequest(2);
                   }}
                 >
-                  {' '}
                   Not Going
                 </Button>
               </>

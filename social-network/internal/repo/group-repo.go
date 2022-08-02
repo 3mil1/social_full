@@ -67,6 +67,7 @@ func (r *GroupRepo) GetAllMyCreatedGroups(loggedInUser string) ([]dto.GroupShort
 		if err != nil {
 			return nil, err
 		}
+
 		members, err := r.GetGroupMemberNumber(group.Id)
 		if err != nil {
 			return nil, err

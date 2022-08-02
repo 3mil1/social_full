@@ -23,6 +23,7 @@
         clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 
     }
+
     .setting_btn{
         display: flex;
         flex-direction: column;
@@ -40,6 +41,7 @@
                 animation: spin 2s linear infinite;
             }
         }
+
         .gear{
             transition: 1s all ease;
             background: transparent;
@@ -57,9 +59,11 @@
 
         .profile_image_container{
             position: relative;
+
             #avatar{
                 display: none;
             }
+
             #edit_icon{
                 cursor: pointer;
                 position: absolute;
@@ -69,6 +73,7 @@
                 background-color: rgba(245, 222, 179, 0.646);
                 border-radius: 50%;
             }
+
             #remove_icon{
                 cursor: pointer;
                 position: absolute;
@@ -77,8 +82,8 @@
                 background-color: rgba(245, 222, 179, 0.646);
                 border-radius: 50%;
             }
-
         }
+
         .privacy_btn_wrapper{
             font-size: 20px;
             margin : 1em;
@@ -95,7 +100,6 @@
         place-items: flex-start;
         justify-content: center;
         flex-direction: column;
-    
         p {
                 background-color: rgba(183, 183, 183, 0.52);
             }

@@ -9,9 +9,9 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import * as helper from "../../../helpers/HelperFuncs";
 import Invite_group_list from "./Invite_group_list";
-import "./group_buttons.scss";
 import GroupService from "../../../utilities/group_service";
 import { useSelector } from "react-redux";
+import "./group_buttons.scss";
 
 export default function Make_group_btn() {
   const group_service = GroupService();

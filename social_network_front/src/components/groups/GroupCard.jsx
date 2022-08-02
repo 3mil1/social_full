@@ -2,29 +2,6 @@ import { Box, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import CoPresentIcon from "@mui/icons-material/CoPresent";
 import "./group.scss";
-import { useState } from "react";
-
-/* 
-  type GroupReply struct{
-      Id                  int     `json:"id"`
-      Title               string  `json:"title"`
-      Description         string  `json:"description"`
-      CreatorId           string  `json:"creator_id"`
-      CreatorFirstName    string  `json:"creator_first_name"`
-      CreatorLastName     string  `json:"creator_last_name"`
-      Members             int     `json:"members"`
-  }
-*/
-
-// const group = {
-//     id : "dev",
-//     title : "kmds",
-//     description : "oke",
-//     creator_id : "12-234",
-//     creator_first_name : "Sil",
-//     creator_last_name : "ver",
-//     members : 10,
-// }
 
 const GroupCard = ({ data, myInfo }) => {
   let redirect = useNavigate();
@@ -41,7 +18,7 @@ const GroupCard = ({ data, myInfo }) => {
           <Typography
             variant="h5"
             color={"white"}
-            sx={{ mt: -0.5,letterSpacing : 2 }}
+            sx={{ mt: -0.5, letterSpacing: 2 }}
           >
             {data.title}
           </Typography>

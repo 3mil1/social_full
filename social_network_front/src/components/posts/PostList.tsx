@@ -11,6 +11,7 @@ import Tooltip from "@mui/material/Tooltip";
 import postService from "../../utilities/post-service";
 import { parseDate } from "../../helpers/parseDate";
 import { useParams } from "react-router-dom";
+import "./post.scss";
 
 export interface PostInterface {
   id: number;
@@ -40,15 +41,14 @@ const PostList = () => {
   );
   const dispatch = useDispatch();
   const openModalWindow = () => {
-    // e.preventDefault();
     dispatch(openModal());
   };
 
   useEffect(() => {
     let response: PostInterface[];
-    
+
     async function getPosts() {
-      switch(userId){
+      switch (userId) {
         case "homepage":
           response = await postService.getOverviewPosts();
           break;
@@ -59,7 +59,7 @@ const PostList = () => {
           response = await postService.getAllPosts(userId);
           break;
       }
-    
+
       let arr: PostInterface[] = [];
       if (response) {
         response.forEach((r: any) => {
@@ -71,7 +71,7 @@ const PostList = () => {
             title: r.subject,
             content: r.content,
             image: r.image,
-            created_at: parseDate(r.created_at),
+            created_at: parseDate(r.created_at, true),
             privacy: r.privacy,
           };
           arr.push(p);
@@ -84,7 +84,7 @@ const PostList = () => {
   }, [id]);
 
   return (
-    <Container>
+    <Container className="post_wrapper">
       {posts.length !== 0 ? (
         <>
           <div className="post_list">
@@ -96,7 +96,7 @@ const PostList = () => {
       ) : (
         <div>User doesn't have posts yet</div>
       )}
-      {(userId === "me" || userId === "homepage") &&
+      {(userId === "me" || userId === "homepage") && (
         <div className={"fabBtn"}>
           <Tooltip title="Add new post">
             <Fab
@@ -110,8 +110,9 @@ const PostList = () => {
               <AddIcon />
             </Fab>
           </Tooltip>
-        </div>}
-      
+        </div>
+      )}
+
       {isOpen ? <NewPost parentPrivacy={0} /> : null}
     </Container>
   );

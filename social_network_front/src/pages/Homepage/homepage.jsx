@@ -4,7 +4,7 @@ import "./homePage.scss";
 export default function Homepage() {
   return (
     <div className="home-page">
-      <PostList />
+      <PostList className="fullHeight" />
     </div>
   );
 }

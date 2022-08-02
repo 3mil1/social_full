@@ -11,6 +11,7 @@ import "./index.scss";
 function App() {
   const profile_service = ProfileService();
   const dispatch = useDispatch();
+  
   useEffect(() => {
     let id = helper.getTokenId();
     profile_service.checkAuth();

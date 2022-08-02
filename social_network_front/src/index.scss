@@ -20,7 +20,6 @@ $btn-transition: 0.5s all ease;
 // BOX
 $box-rad:10px;
 
-
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -45,22 +44,28 @@ code {
   display: flex;
   width: 100vw;
   height: 100vh;
+  justify-content: flex-start;
+  
   main.screen-center {
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     display: flex;
     width: 100vw;
     height: 100vh;
   }
+
   > div {
     display: flex;
   }
+
   .left {
     flex: 0 0 auto;
-    width: 30vw;
-  }
-  .right {
     flex: 1;
+  }
+
+  .right {
+    width: 50vw;
+    flex: 3;
     padding: 20px;
   }
 }

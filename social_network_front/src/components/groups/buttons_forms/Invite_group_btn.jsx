@@ -30,11 +30,12 @@ const Invite_group_btn = () => {
     <>
         {!isOpen &&
         <>
-        {data != null  ? <Button onClick={() => { setIsOpen(!isOpen)}}>Invite Users</Button>
+        {data != null  ? 
+        <Button onClick={() => { setIsOpen(!isOpen)}}>Invite Users</Button>
         :
         <div>Nobody to send invites</div>
-    }
-    </>
+        }
+        </>
         }
 
         {

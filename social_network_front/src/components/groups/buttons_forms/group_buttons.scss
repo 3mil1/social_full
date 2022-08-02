@@ -1,12 +1,13 @@
-
 .make_group{
+    color: #333;
+
     .make_group_btn{
         background: rgba(245, 245, 245, 0.516);
         &:hover{
             background: #D7B271;
         }
     }
-    color: #333;
+
     .make_group_form{
         z-index: 99;
         flex-direction: column;
@@ -28,6 +29,7 @@
             padding:0.75em ;
         }
     }
+
     .back_btn {
         width: 5px;
         position: absolute;
@@ -37,11 +39,11 @@
             background-color: #D7B271;
         }
     }
+
     .error{
         color: red;
     }
 }
-
 
 #postForm{
     position: absolute;
@@ -77,8 +79,6 @@
         .error{
             color: red;
         }
-
-        
     }
 
     input[type=file]{
@@ -101,7 +101,6 @@
             }
         }
     }
-
 }
 
 #create_btn {
@@ -129,8 +128,6 @@
             right: 0;
             top: 0;
         }
-
-  
 
    .input {
        width: 500px;
@@ -169,5 +166,71 @@
         justify-content: space-between;
         background-color: white;
         border-bottom: 2px solid grey;
+    }
+}
+
+.comment_wrapper{
+    position: relative;
+
+        #commentForm {
+            position: absolute;
+            background-color: rgb(204, 214, 210);
+            border: 4px solid rgba(104, 105, 104, 0.722);
+            width: 400px;
+            padding: 4em;
+            top: -240px;
+            left: 0%;
+            right: 0;
+            z-index: 10;
+            
+            .back_btn {
+            position: absolute;
+            margin: 1em;
+            right: 0;
+            top: 0;
+        }
+        
+        .input {
+            #subject {
+                width: 300px;
+            }
+            
+            #content {
+                width: 280px;
+                padding: 0.5em;
+            }
+            
+            height: 40px;
+            display: flex;
+            margin-top: 1em;
+            justify-content: space-around;
+            place-items: flex-start;
+            
+            .error {
+                color: red;
+            }
+        }
+        
+        input[type=file] {
+            display: none;
+        }
+        
+        .inputExtra {
+            margin-top: 5em;
+            margin-bottom: -2em;
+            display: flex;
+            justify-content: space-around;
+            place-items: center;
+            
+            .image_btn {
+                border: 2px solid black;
+                padding: 0.2em;
+                cursor: pointer;
+                
+                &:hover {
+                    box-shadow: 0 0 2px black;
+                }
+            }
+        }
     }
 }
