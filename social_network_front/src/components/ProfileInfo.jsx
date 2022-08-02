@@ -46,7 +46,8 @@ const ProfileInfo = () => {
   const handleUpdate = async (info) => {
     if (errors.length == 0) {
       info.user_img = img;
-      profile_service.updateProfileInfo(info);
+      await profile_service.updateProfileInfo(info);
+      setUpdateing(!updateing);
     }
   };
 

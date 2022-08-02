@@ -36,7 +36,7 @@ const ProfileService = () => {
         user_img: data.user_img,
         is_private: data.is_private,
       });
-      getMyInfo();
+      await getMyInfo();
     } catch (err) {
       helper.checkError(err);
     }

@@ -51,10 +51,11 @@ export default function Login() {
       WsApi.start(id, dispatch);
       redirect("/homepage", { replace: true });
     } catch (e) {
+      
       if (e instanceof Error) {
         console.error(e.message);
         const errorState = {
-          text: e.message,
+          text: "Please Check Password or Mail/Username.",
           severity: "warning",
         };
         dispatch(setAlert(errorState));

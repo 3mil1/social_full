@@ -24,7 +24,7 @@ export default {
         title: response.data.subject,
         content: response.data.content,
         image: response.data.image,
-        created_at: parseDate(response.data.created_at),
+        created_at: parseDate(response.data.created_at, true),
         privacy: response.data.privacy,
       };
     } catch (e) {

@@ -54,12 +54,19 @@
     }
 }
 
-.post_list{
+
+.post_list {
+    overflow-y: scroll;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 85vh;
     width: 90%;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
+
 
 .fabBtn {
     width: 10%;

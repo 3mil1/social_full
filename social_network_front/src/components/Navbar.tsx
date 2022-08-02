@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Home } from "@mui/icons-material";
-import { Avatar } from "@mui/material";
+import { Avatar, Button } from "@mui/material";
 import { useSelector } from "react-redux";
 import { RootState } from "../store/store";
 import Logout from "../components/buttons/logout";
@@ -67,6 +67,7 @@ const Navbar = () => {
         </p>
       </div>
 
+    <button onClick={() => console.log(storeInfo)}> CLICk</button>
       <Link className="link" to={"/homepage"}>
         Home <Home sx={{ marginLeft: 1 }} />
       </Link>

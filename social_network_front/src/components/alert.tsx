@@ -31,8 +31,8 @@ export function AlertSnackbar() {
 
   return (
     <Snackbar
-      anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-      style={{ bottom: "75px" }}
+      anchorOrigin={{ vertical: "top", horizontal: "center" }}
+      style={{ top: "25%" }}
       open={isOpen}
       autoHideDuration={6000}
       onClose={handleClose}

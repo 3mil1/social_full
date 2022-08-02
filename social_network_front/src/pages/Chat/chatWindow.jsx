@@ -228,7 +228,7 @@ export const Chat = () => {
             {receiver.id !== "" && hasMore && (
               <ListItem key="loadMoreBtn">
                 <Button
-                  sx={{ marginLeft: 25 }}
+                  // sx={{ marginLeft: 25 }}
                   variant="text"
                   onClick={loadMore}
                   className={"load-more-btn"}
@@ -254,7 +254,9 @@ export const Chat = () => {
                     <Grid container>
                       <Grid item xs={12}>
                         <ListItemText
-                          className={m.from === sender ? "right" : "left"}
+                          className={
+                            m.from === sender ? "right-msg" : "left-msg"
+                          }
                         >
                           <div className={"additional-info user-name"}>
                             {m.name}

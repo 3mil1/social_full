@@ -183,7 +183,6 @@ const Create_event = ({ id }) => {
                 going
               </option>
               <option value="2">not going</option>
-              <option value="3">intrested</option>
             </select>
           </div>
           <Button

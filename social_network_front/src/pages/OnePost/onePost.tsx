@@ -29,7 +29,7 @@ export default function OnePost() {
         const data = await postService.showPost(id);
         const p = data.Post;
         const c = data.Comments || [];
-        const date = parseDate(p.created_at);
+        const date = parseDate(p.created_at, true);
         const post: PostInterface = {
           id: p.id,
           user_id: p.user_id,

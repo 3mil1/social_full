@@ -4,6 +4,7 @@ import {
 } from "../store/notificationSlice";
 import { addMsg } from "../store/chatSlice";
 import * as helper from "../helpers/HelperFuncs";
+import { parseDate } from "../helpers/parseDate";
 
 let ws;
 const cleanUp = () => {
@@ -37,13 +38,18 @@ export default {
           switch (m.action_type) {
             case "private message":
               if (m.data.from === receiver || m.data.from === sender) {
-                dispatcher(addMsg(m.data));
+                let msg = {
+                  content: m.data.content,
+                  from: m.data.from,
+                  data: parseDate(m.data.created_at, false),
+                };
+                dispatcher(addMsg(msg));
               }
               break;
             case "group message":
               const newMsg = {
                 content: m.data.content,
-                data: m.data.created_at,
+                data: parseDate(m.data.created_at, false),
                 from: m.data.from,
                 name: m.data.first_name + " " + m.data.last_name,
                 group_id: m.data.group_id,
