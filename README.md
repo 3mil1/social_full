@@ -7,21 +7,13 @@ Authors:<br>
  - Anna Lazarenkova (anna_lazarenkova)
 
 How to run: 
-1. in terminal type: bash  start.sh
-2. wait til docker has finished installing and setting up
-3. open broswer on "http://localhost:3000/:
+1. open folder "social-network" and add new file ".env" with: <br>
+REFRESH_SECRET={SomeSecretWordHere}<br>
+ACCESS_SECRET={AnotherSecretWordHere}<br>
 
-
-### Authentication
-In order for the users to use the social network they will have to make an account. To register, every user should provide at least:
-* Email
-* Password
-* First Name
-* Last Name
-* Date of Birth
-* Avatar/Image (Optional) (10Mb jpeg(jpg), png, gif)
-* Nickname (Optional)
-* About Me (Optional)
+2. in terminal type: bash  start.sh
+3. wait til docker has finished installing and setting up (it will take up to 5 minutes)
+4. open browser on "http://localhost:3000/:
 
 ### Objectives
 This project is a Facebook-like social network that will contain the following features:
@@ -32,7 +24,8 @@ This project is a Facebook-like social network that will contain the following f
 * Notification
 * Chats
 - - - -
-
+### Authentication
+In order for the users to use the social network they will have to make an account. 
 When the user logins, he/she should stay logged in until he/she chooses a logout option that should be available at all times. 
 - - - -
 
@@ -42,12 +35,7 @@ In order to follow someone the user first needs to send a request to the user he
 - - - -
 
 ### Profile
-Every profile should contain :
-* User information
-* User activity (Every post made by the user)
-* Followers and following users (display the users that are following the owner of the profile and who he/she is following)
-There are two types of profiles: a public profile and a private profile. A public profile will display the information specified above to every user on the social network, while the private profile will only display that same information to their followers only.
-
+There are two types of profiles: a public profile and a private profile. 
 The user should be able to turn its profile public or private.
 - - - -
 
@@ -69,12 +57,15 @@ After creating the event every user of that group can choose one of the options 
 ### Chat
 The user is able to send private messages/emojis to users that he/she is following.
 Groups have a common chat room, so if a user is a member of the group he/she is able to send and receive messages to this group chat.
+Notification about any new message will be shown.
 - - - -
 
 ### Notifications
 A user will be notified if he/she:
 
-* has a private profile and some other user sends him/her a following request
-* receives a group invitation, so he can refuse or accept the request
-* is the creator of a group and another user requests to join the group, so he can refuse or accept the request
-* is member of a group and an event is created
+* has a private profile and some other user sends him/her a following request (mandatory)
+* receives a group invitation, so he can refuse or accept the request (mandatory)
+* is the creator of a group and another user requests to join the group, so he can refuse or accept the request (mandatory)
+* is member of a group and an event is created (mandatory)
+* new comment to user post will be added (optional)
+* group access will be opened for user (optional)

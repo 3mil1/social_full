@@ -13,6 +13,7 @@ import (
 	"social-network/pkg/muxHandler"
 	"strconv"
 	"strings"
+	"time"
 )
 
 type GroupController struct {
@@ -318,6 +319,12 @@ func (c *GroupController) InitRoutes() {
 	c.Mux.Handle("/invite", middleware.Auth(func(w http.ResponseWriter, r *http.Request) {
 		switch r.Method {
 		case "POST":
+			time.Sleep(1 * time.Second) 
+			/*this sleep is needed, as otherwise there are 2 requests, that come at the same time: 
+			1) create new group
+			2) send join request in this group
+			both are making some actions on the same table and it cause "database is locked" error
+			*/
 			val, _ := r.Context().Value("values").(middleware.UserContext)
 			loggedInUserId := val.UserID
 
