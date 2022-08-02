@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const SingleGroupPost = ({data}) => {
-  const name = useSelector(state => state.profile.info.last_name + " " + state.profile.info.first_name);
+  const name = useSelector(state => state.profile.info.first_name + " " + state.profile.info.last_name);
   const redirect = useNavigate();
   let onGroupPage = window.location.href.split("/").indexOf("post") < 0;
   let {id} = useParams();

@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 const SingleGroupEvent = ({data}) => {
   const group_service  = GroupService()
-  const name = useSelector(state => state.profile.info.last_name + " " + state.profile.info.first_name);
+  const name = useSelector(state => state.profile.info.first_name + " " + state.profile.info.last_name);
   const redirect = useNavigate();
   const [past, setPast] = useState(false)
   let joined = group_service.isJoining(data.event_id)
@@ -35,7 +35,7 @@ const SingleGroupEvent = ({data}) => {
           <div
             className='author'
             onClick={e => {
-              if (e.target.textContent.slice(1, -1) != name) {
+              if (e.target.textContent.slice(1,-1) != name) {
                 redirect(`/profile/${data.creator_id}`);
               }
             }}
