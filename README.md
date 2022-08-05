@@ -7,6 +7,7 @@ Authors:<br>
  - Anna Lazarenkova (anna_lazarenkova)
 
 How to run: 
+!!!~ NOT TO HARD RESET ~!!!
 1. in terminal type: bash  start.sh
 2. wait til docker has finished installing and setting up (it will take up to 5 minutes)
 3. open browser on "http://localhost:3000/:
